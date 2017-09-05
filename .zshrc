@@ -2,6 +2,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ZSH=/Users/peter/.oh-my-zsh
+zstyle :omz:plugins:ssh-agent identities id_ofo id_ofo
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -14,6 +15,7 @@ export ZSH=/Users/peter/.oh-my-zsh
 # ZSH_THEME="juanghurtado"
 # ZSH_THEME="pure"
 ZSH_THEME="my-af-magic"
+# ZSH_THEME="af-magic"
 # ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -59,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git autojump brew history python web-search django tmux virtualenvwrapper chucknorris osx go)
-plugins=(git vi-mode history history-substring-search fasd python pip redis-cli mosh virtualenvwrapper tmux autojump brew osx go)
+plugins=(git vi-mode history history-substring-search fasd python pip redis-cli mosh virtualenvwrapper tmux autojump brew osx go docker ssh-agent)
 
 #保存历史
 export HISTFILE="$HOME/.history"
@@ -190,9 +192,13 @@ alias tacitus_mysql="mycli -h 10.215.242.101 -u tacitus -p2Aq3J5MA1OcV -P 3309 -
 alias pon='export http_proxy=http://duotai:yReQA-GRYu@conrad.h.xduotai.com:17018;export https_proxy=$http_proxy'
 alias poff='unset http_proxy;unset https_proxy'
 
-export NVM_DIR="/Users/Peter/.nvm"
+# export NVM_DIR="/Users/Peter/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # brew
 # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
@@ -201,3 +207,9 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bott
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:/Users/Peter/go/bin
 export PATH="/usr/local/opt/opencv3/bin:$PATH"
+# alias ssh='sshp'
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+PATH=/Users/peter/.Pokemon-Terminal:$PATH
+
+export PYTHONDONTWRITEBYTECODE=1
